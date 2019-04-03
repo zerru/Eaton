@@ -26,15 +26,21 @@ If we receive 2 measurents of the same grid [x, y] with different elements, the 
 
 R03 2 2 GOLD 80
 
-GET 2 2  -----------> Result: GOLD 80%
+GET 2 2
+
+**Expected Output: GOLD 80%**
 
 R43 2 2 GOLD 20
 
-GET 2 2  -----------> Result: GOLD 50%
+GET 2 2 
+
+**Expected Output: GOLD 50%**
 
 R01 2 2 SILV 50
 
-GET 2 2  -----------> Result: Error
+GET 2 2
+
+**Expected Output: Result: Error**
 
 
 ## How to run
