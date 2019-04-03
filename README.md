@@ -9,7 +9,11 @@ The test requirements were quite open, and as it didn´t come to my mind any spe
 
 ## Functionality description (based on the previous test)
 
-There are unknown number of robotic rovers on a plateau on Mars. This plateau, which is curiously rectangular, is divided up into a grid to simplify navigation. The plateau must be navigated by the rovers so that their on-board measurement machine can get the main element (symbolised with 4 letters) and the percentage of the element´s purity (% between 1 and 100). A rover’s position is represented by a combination of x and y coordinates, and each rover has its own number (from 01 to 99). For example, a message from the rover 03, which is in the position [2, 2] and has measured "GOLD" with a purity of 95% should be like this:
+There are unknown number of robotic rovers on a plateau on Mars. This plateau, which is curiously rectangular, is divided up into a grid to simplify navigation. We have to add the plateau coordenates, for example:
+
+**3, 4**
+
+The plateau must be navigated by the rovers so that their on-board measurement machine can get the main element (symbolised with 4 letters) and the percentage of the element´s purity (% between 1 and 100). A rover’s position is represented by a combination of x and y coordinates, and each rover has its own number (from 01 to 99). For example, a message from the rover 03, which is in the position [2, 2] and has measured "GOLD" with a purity of 95% should be like this:
 
 **R03 2 2 GOLD 95**
 
@@ -24,9 +28,11 @@ If we receive 2 measurents of the same grid [x, y] with different elements, the 
 
 ## Example
 
-R03 2 2 GOLD 80
+5, 5 (separated by a comma)
 
-GET 2 2
+R03 2 2 GOLD 80 (separated by spaces)
+
+GET 2 2 (separated by a comma)
 
 **Expected Output: GOLD 80%**
 
@@ -40,7 +46,7 @@ R01 2 2 SILV 50
 
 GET 2 2
 
-**Expected Output: Result: Error**
+**Expected Output: Error**
 
 
 ## How to run
@@ -50,5 +56,7 @@ Run Eaton_dev.exe, which is inside "Default" folder.
 *Note: This .exe file has to have always the libgcc_s_dw2-1.dll file in the same folder.
 
 
-## TODO & imprevements
+## TODO & improvements
 
+- If the different messages could arrive very fast, it should be implemented a stack
+- 
