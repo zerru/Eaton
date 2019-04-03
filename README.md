@@ -1,5 +1,5 @@
 # Eaton
-Test for Eaton Prague
+Test for Eaton Prague (C language)
 
 ## Introduction
 
