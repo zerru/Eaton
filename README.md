@@ -32,7 +32,7 @@ If we receive 2 measurents of the same grid [x, y] with different elements, the 
 
 R03 2 2 GOLD 80 (separated by spaces)
 
-GET 2 2 (separated by a comma)
+GET 2 2 (separated by spaces)
 
 **Expected Output: GOLD 80%**
 
@@ -56,7 +56,14 @@ Run Eaton_dev.exe, which is inside "Default" folder.
 *Note: This .exe file has to have always the libgcc_s_dw2-1.dll file in the same folder.
 
 
-## TODO & improvements
+## Possible TODO-s & improvements
 
-- If the different messages could arrive very fast, it should be implemented a stack
-- 
+- If the different messages could arrive very fast and simultaneously, it would be interesting to implement a stack.
+- In order to process messages faster from the same rover, it would be interesting to receive multiple measurements in the same message using movement commands: R01 1 1 GOLD 95 **L SILV 90**, so the element SILV with 90% of purity was measured in the position 0 1, which is the left (L command) grid of the previous.
+- As we would know where there are all the rovers, we could know if could be a crash between 2 of them and manage it. In the old project I was detecting the crashes.
+- If the same grid is measured with different elements, it will be in error forever. I should be any way to delete the error, for example it could show the one has higher purity.
+- In the struct we could save in a array the rovers that have made the measurements in each grid. Like that we could check if one rover has its measument machine broken.
+- It would be interesting to check the last purity measurement with the previous measurements, and go to error if the different is too high.
+
+
+Thank you!!
